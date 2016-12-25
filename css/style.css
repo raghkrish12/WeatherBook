@@ -1,0 +1,15 @@
+/* Styles go here */
+
+#submitBtn{
+  float:left;
+  margin-left:600px;
+  margin-top:50px;
+}
+
+#srchBtn{
+  margin-left:600px;
+}
+
+ul{
+  list-style-type:none;
+}

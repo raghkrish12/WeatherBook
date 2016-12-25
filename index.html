@@ -2,19 +2,32 @@
 <html ng-app="weatherApp">
 	<head>
 		<title>Weather Book</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js"></script>
-		<link rel="stylesheet" href="css/bootstrap.min.css"/>
-		<link rel="stylesheet" href="css/style.css"/>
-		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="angular-route.min.js"></script>
+		<link rel="stylesheet" href="bootstrap.min.css"/>
+		<script type="text/javascript" src="bootstrap.min.js"></script>
+		<link rel="stylesheet" href="style.css"/>
+		<script type="text/javascript" src="app.js"></script>
 	</head>
 	<body>
-		<div ng-controller="weatherController">
-			<ul ng-repeat="car in cars">
-				<li>{{car.name}}</li>
-				<li>{{car.price}}</li>
-				<li>{{car.color}}</li>
-				<li>{{car.model}}</li>
+	  <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand">
+          </a>
+        </div>
+      </div>
+    </nav>
+	  <div ng-controller="weatherController">
+  	  <input id="srchBtn" type="text" name="search" ng-model="cityName" placeholder="Search.."/>
+  	  <input id="submitBtn" type="Submit" value="Submit" ng-click="getWeatherInfo(cityName)"/>
+		  <ul>
+				<li>{{weatherData.weather.main}}</li>
+				<li>{{weatherData.main.pressure}}</li>
+				<li>{{weatherData.main.humidity}}</li>
+				<li>{{weatherData.name}}</li>
+				<li>{{weatherData.sys.country}}</li>
 			</ul>
 		</div>
 	</body>
